@@ -34,7 +34,17 @@
     "trailingComma": "all"
   },
   "name": "react-tiny-contextmenu",
-  "author": "Adam Trager",
+  "author": "Adam Trager <we.have@unfinished.business> (https://unfinished.business)",
+  "description": "A super tiny, zero dependency context menu.",
+  "keywords": [
+    "react",
+    "reactjs",
+    "menu",
+    "contextmenu",
+    "context menu",
+    "rightclick",
+    "right click"
+  ],
   "module": "dist/react-tiny-contextmenu.esm.js",
   "devDependencies": {
     "@babel/core": "^7.11.6",
