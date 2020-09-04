@@ -42,7 +42,7 @@ yarn add react-tiny-contextmenu
 ## Example usage:
 
 ```tsx
-import {ContextMenu, ContextMenuProps } from "react-tiny-contextmenu";
+import { ContextMenu } from "react-tiny-contextmenu"
 
 const items = [
   {
@@ -67,6 +67,7 @@ const items = [
 ]
 
 ...
+
 <span ref={contextMenuContainerRef}>right click me!</span>
-<ContextMenu target={contextMenuContainerRef} items={items} className="component-wrapper" />
+<ContextMenu target={contextMenuContainerRef} items={items} className="context-menu-example" />
 ```
