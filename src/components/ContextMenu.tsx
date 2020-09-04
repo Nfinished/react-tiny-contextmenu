@@ -44,8 +44,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
 
     if (containerElement) {
       containerElement.addEventListener('contextmenu', handleContextMenu)
-      return () =>
-        containerElement.removeEventListener('contextmenu', handleContextMenu)
+      return () => containerElement.removeEventListener('contextmenu', handleContextMenu)
     }
   }, [target, handleContextMenu])
 
@@ -68,11 +67,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
           items!.map(({ className, ...rest }, index) => (
             <span
               key={index}
-              className={Utils.joinClassNames([
-                'context-menu-item',
-                itemClassName,
-                className,
-              ])}
+              className={Utils.joinClassNames(['context-menu-item', itemClassName, className])}
               {...rest}
             />
           ))}
