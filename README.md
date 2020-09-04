@@ -40,7 +40,7 @@ A super tiny, zero dependency context menu.
 ## Usage:
 
 ```tsx
-import ContextMenu from 'react-tiny-contextmenu'
+import { ContextMenu } from 'react-tiny-contextmenu'
 
 const contextMenuContainerRef = React.useRef(null)
 const items = [
