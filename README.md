@@ -2,60 +2,57 @@
 
 A super tiny, zero dependency context menu.
 
-[![npm version](https://img.shields.io/npm/v/react-tiny-contextmenu.svg?style=flat)](https://www.npmjs.com/package/react-tiny-contextmenu)
-
-TinyContextMenu is a lightweight component for overriding default context menu (right click) functionality on an element.
-
-### Install
-
-```console
-yarn add react-tiny-contextmenu
-```
+[![npm version](https://img.shields.io/npm/v/react-tiny-contextmenu?style=flat-square)](https://www.npmjs.com/package/react-tiny-contextmenu)
+[![npm license](https://img.shields.io/npm/l/react-tiny-contextmenu?style=flat-square)](https://github.com/Nfinished/react-tiny-contextmenu/blob/master/LICENSE)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/react-tiny-contextmenu?style=flat-square)](https://bundlephobia.com/result?p=react-tiny-contextmenu)
+![requires react <16.8](https://img.shields.io/npm/dependency-version/react-tiny-contextmenu/peer/react?style=flat-square)
+[![dependencies](https://img.shields.io/david/nfinished/react-tiny-contextmenu?style=flat-square)](https://david-dm.org/nfinished/react-tiny-contextmenu)
 
 ## API:
 
-**target** : React.refObject\<HtmlElement>
+**target** : `React.refObject<HtmlElement>`
 <br/>A React ref to attach the context menu to.
 
 ---
 
-**items** : React.ComponentWithoutRef<'span'>[]
+**items** : `React.ComponentWithoutRef<'span'>[]`
 <br/>A list of objects representing the context menu's options. Accepts all props that a span would.
 
 ---
 
 ---
 
-**children** : React.ReactNode
+**children** : `React.ReactNode`
 <br/>Instead of passing in a list of items, roll your own content.
 
 ---
 
-**className** : string
+**className** : `string`
 <br/>ClassNames to be applied to the context menu's container element.
 
 ---
 
-**itemClassName** : string
+**itemClassName** : `string`
 <br/>ClassNames to be applied to each item element. Applied _before_ any classNames provided per-item.
 
 ---
 
-## Example usage:
+## Usage:
 
 ```tsx
 import { ContextMenu } from "react-tiny-contextmenu"
 
+const contextMenuContainerRef = React.useRef(null)
 const items = [
   {
     children: 'One Button',
   },
   {
     children: (
-      <>
+      <div>
         <button>two</button>
         <button>button</button>
-      </>
+      </div>
     ),
   },
   {
@@ -71,5 +68,5 @@ const items = [
 ...
 
 <span ref={contextMenuContainerRef}>right click me!</span>
-<ContextMenu target={contextMenuContainerRef} items={items} className="context-menu-example" />
+<ContextMenu target={contextMenuContainerRef} items={items} />
 ```
