@@ -1,5 +1,7 @@
 # react-tiny-contextmenu
 
+A super tiny, zero dependency context menu.
+
 [![npm version](https://img.shields.io/npm/v/react-tiny-contextmenu.svg?style=flat)](https://www.npmjs.com/package/react-tiny-contextmenu)
 
 TinyContextMenu is a lightweight component for overriding default context menu (right click) functionality on an element.
