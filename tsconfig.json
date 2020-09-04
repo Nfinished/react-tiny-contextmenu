@@ -1,0 +1,19 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "target": "ES5",
+    "declaration": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strict": true
+  }
+}
