@@ -1,8 +1,10 @@
 import React from 'react'
-import { useOnClickOutside } from '../hooks'
-import * as Utils from '../utils'
+import { useOnClickOutside } from '../../hooks'
+import * as Utils from '../../utils'
 
-import { ContextMenuProps } from '../types'
+import { ContextMenuProps } from '../../types'
+
+import './styles.css'
 
 export const ContextMenu: React.FC<ContextMenuProps> = ({
   target,
