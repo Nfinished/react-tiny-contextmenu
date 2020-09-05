@@ -35,10 +35,11 @@
   },
   "name": "react-tiny-contextmenu",
   "author": "Adam Trager <we.have@unfinished.business> (https://unfinished.business)",
-  "description": "A super tiny, zero dependency context menu.",
+  "description": "A super tiny, fully typed, zero dependency context menu.",
   "keywords": [
     "react",
     "reactjs",
+    "typescript",
     "menu",
     "contextmenu",
     "context menu",

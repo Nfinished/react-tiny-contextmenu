@@ -1,6 +1,6 @@
 # react-tiny-contextmenu
 
-A super tiny, zero dependency context menu.
+A super tiny, fully typed, zero dependency context menu.
 
 [![npm version](https://img.shields.io/npm/v/react-tiny-contextmenu?style=flat-square)](https://www.npmjs.com/package/react-tiny-contextmenu)
 [![npm license](https://img.shields.io/npm/l/react-tiny-contextmenu?style=flat-square)](https://github.com/Nfinished/react-tiny-contextmenu/blob/master/LICENSE)
