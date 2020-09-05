@@ -53,8 +53,6 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
-    "commitizen": "^4.2.1",
-    "cz-conventional-changelog": "3.3.0",
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "react": "^16.13.1",
@@ -69,13 +67,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint --fix",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "pre-commit": "tsdx lint --fix"
     }
   }
 }
