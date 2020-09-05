@@ -8,6 +8,9 @@ A super tiny, fully typed, zero dependency context menu.
 ![requires react <16.8](https://img.shields.io/npm/dependency-version/react-tiny-contextmenu/peer/react?style=flat-square)
 [![dependencies](https://img.shields.io/david/nfinished/react-tiny-contextmenu?style=flat-square)](https://david-dm.org/nfinished/react-tiny-contextmenu)
 
+
+![usage gif](https://i.imgur.com/ZWpEUS1.gif)
+
 ## API:
 
 **target** : `React.refObject<HtmlElement>`
