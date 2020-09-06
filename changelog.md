@@ -1,7 +1,6 @@
 This project follows semver!
 
 <!-- [planned]
-* storybook with basic examples
 * extra config, ex don't close on click?
 * better test coverage
 -->
