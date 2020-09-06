@@ -52,7 +52,11 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
 
   React.useEffect(() => {
     document.addEventListener('scroll', hideMenu, true)
-    return () => document.removeEventListener('scroll', hideMenu)
+    window.addEventListener('blur', hideMenu)
+    return () => {
+      document.removeEventListener('scroll', hideMenu)
+      window.removeEventListener('blur', hideMenu)
+    }
   }, [hideMenu])
 
   if (!showMenu) return null
