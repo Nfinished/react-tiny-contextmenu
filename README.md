@@ -23,8 +23,6 @@ A super tiny, fully typed, zero dependency context menu.
 
 ---
 
----
-
 **children** : `React.ReactNode`
 <br/>Instead of passing in a list of items, roll your own content.
 
