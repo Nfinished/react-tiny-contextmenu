@@ -5,6 +5,10 @@ This project follows semver!
 * better test coverage
 -->
 
+### v1.0.2
+
+- Even tiner! Remove unused CSS rule.
+
 ### v1.0.1
 
 - Hide context menu on blur.
