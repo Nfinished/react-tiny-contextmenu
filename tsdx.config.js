@@ -8,6 +8,12 @@ module.exports = {
         ]
       })
     )
+
+    if (options.env === 'production') {
+      config.plugins.push(
+        require('rollup-plugin-filesize')()
+        )
+      }
     return config
   },
 }
