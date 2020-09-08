@@ -62,20 +62,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
   if (!showMenu) return null
   else
     return (
-      <div
-        ref={ref}
-        className={Utils.joinClassNames(['context-menu', className])}
-        style={style}
-        onClick={onClick}
-        {...rest}
-      >
+      <div ref={ref} className={Utils.joinClassNames(['_rtcm', className])} style={style} onClick={onClick} {...rest}>
         {children ||
           items!.map(({ className, ...rest }, index) => (
-            <span
-              key={index}
-              className={Utils.joinClassNames(['context-menu-item', itemClassName, className])}
-              {...rest}
-            />
+            <span key={index} className={Utils.joinClassNames(['_rtcm-item', itemClassName, className])} {...rest} />
           ))}
       </div>
     )
