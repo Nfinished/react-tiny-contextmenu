@@ -5,6 +5,11 @@ This project follows semver!
 * better test coverage
 -->
 
+### v1.0.3
+
+- Namespace CSS classes so they won't accidentally override anything.
+- Get even tinierer in the process!
+
 ### v1.0.2
 
 - Even tiner! Remove unused CSS rule.
