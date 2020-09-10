@@ -48,6 +48,8 @@
   },
   "module": "dist/react-tiny-contextmenu.esm.js",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.2",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "autoprefixer": "^9.8.6",
