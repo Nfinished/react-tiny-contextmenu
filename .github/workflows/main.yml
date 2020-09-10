@@ -1,5 +1,5 @@
 name: CI
-on: [push]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,9 +32,12 @@ jobs:
           CI: true
 
       - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_TEST_REPORTER_ID }}
           CI: true
+        with:
+          coverageCommand: yarn test --ci --coverage --maxWorkers=2
 
       - name: Build
         run: yarn build
