@@ -5,16 +5,15 @@ import '@testing-library/jest-dom'
 
 import { ContextMenu } from '../src'
 
-
 const Wrapper = () => {
   const containerRef = React.useRef(null)
   const items = [
     {
       children: 'Click me!',
-      'data-testid': 'menu-item'
+      'data-testid': 'menu-item',
     },
   ]
-  
+
   return (
     <>
       <div ref={containerRef} data-testid="wrapper">
@@ -64,10 +63,10 @@ describe('Context Menu', () => {
 
     //   expectUnmounted()
     // })
-  
+
     it('should unmount on blur', () => {
       fireEvent.blur(window)
-  
+
       expectUnmounted()
     })
   })
