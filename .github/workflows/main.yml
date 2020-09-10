@@ -38,7 +38,6 @@ jobs:
           CI: true
         with:
           coverageCommand: yarn test --ci --coverage --maxWorkers=2
-          debug: true
 
       - name: Build
         run: yarn build
