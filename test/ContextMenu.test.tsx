@@ -88,7 +88,7 @@ describe('Context Menu', () => {
       expectUnmounted()
     })
 
-    it('should prefer rendering children over a items', () => {
+    it('should prefer rendering children over items', () => {
       renderAndOpen({ children: <div>child</div> })
 
       expect(screen.getByText('child')).toBeInTheDocument()
