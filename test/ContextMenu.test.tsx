@@ -41,15 +41,13 @@ afterEach(cleanup)
 describe('Context Menu', () => {
   describe('Mounting', () => {
     it('should mount on right click', () => {
-      const { baseElement } = render(<Wrapper />)
+      render(<Wrapper />)
 
       expectUnmounted()
 
       fireEvent.contextMenu(screen.getByTestId('wrapper'))
 
       expect(screen.getByTestId('menu')).toBeInTheDocument()
-
-      expect(baseElement).toMatchSnapshot()
     })
   })
 
