@@ -3,33 +3,36 @@ import React from 'react'
 import { render, fireEvent, screen, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { ContextMenu } from '../src'
+import { ContextMenu, ContextMenuProps } from '../src'
 
-const Wrapper = () => {
-  const containerRef = React.useRef(null)
-  const items = [
-    {
-      children: 'Click me!',
-      'data-testid': 'menu-item',
-    },
-  ]
+type WrapperProps = Partial<Omit<ContextMenuProps, 'target'>>
+const Wrapper: React.FC<WrapperProps> = overrides => {
+  const props = {
+    target: React.useRef(null),
+    items: [
+      {
+        children: 'Click me!',
+        'data-testid': 'menu-item',
+      },
+    ],
+    ...overrides,
+  }
 
   return (
-    <>
-      <div ref={containerRef} data-testid="wrapper">
+    <div data-testid="container">
+      <div ref={props.target} data-testid="target">
         Right click me!
       </div>
-      <ContextMenu target={containerRef} data-testid="menu" items={items} />
-      <button data-testid="away">away</button>
-    </>
+      <ContextMenu data-testid="menu" {...props} />
+    </div>
   )
 }
 
-const renderAndOpen = () => {
-  const renderData = render(<Wrapper />)
-  fireEvent.contextMenu(screen.getByTestId('wrapper'))
+const renderAndOpen = (props: WrapperProps = {}) => {
+  const renderResult = render(<Wrapper {...props} />)
+  fireEvent.contextMenu(screen.getByTestId('target'))
 
-  return renderData
+  return renderResult
 }
 
 const expectUnmounted = () => {
@@ -45,7 +48,7 @@ describe('Context Menu', () => {
 
       expectUnmounted()
 
-      fireEvent.contextMenu(screen.getByTestId('wrapper'))
+      fireEvent.contextMenu(screen.getByTestId('target'))
 
       expect(screen.getByTestId('menu')).toBeInTheDocument()
     })
@@ -56,11 +59,12 @@ describe('Context Menu', () => {
       renderAndOpen()
     })
 
-    // it('should unmount on click away', () => {
-    //   fireEvent.click(screen.getByTestId('away'))
+    // COMBAK: something's super funky about clicking outside in a test env
+    it.skip('should unmount on click outside', () => {
+      fireEvent.click(document)
 
-    //   expectUnmounted()
-    // })
+      expectUnmounted()
+    })
 
     it('should unmount on blur', () => {
       fireEvent.blur(window)
@@ -82,6 +86,12 @@ describe('Context Menu', () => {
       fireEvent.click(screen.getByTestId('menu-item'))
 
       expectUnmounted()
+    })
+
+    it('should prefer rendering children over a items', () => {
+      renderAndOpen({ children: <div>child</div> })
+
+      expect(screen.getByText('child')).toBeInTheDocument()
     })
   })
 })
