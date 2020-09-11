@@ -1,6 +1,5 @@
 import React from 'react'
 import { useOnClickOutside } from '../../hooks'
-import * as Utils from '../../utils'
 
 import { ContextMenuProps } from '../../types'
 
@@ -9,7 +8,7 @@ import './styles.css'
 export const ContextMenu: React.FC<ContextMenuProps> = ({
   target,
   items,
-  style: propStyle,
+  style: propStyle = {},
   onClick: propOnClick,
   children,
   className,
@@ -20,10 +19,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
 
   const [showMenu, setShowMenu] = React.useState(false)
 
-  const [style, setStyle] = React.useReducer<
-    React.Reducer<React.CSSProperties, React.CSSProperties>,
-    React.CSSProperties | undefined
-  >(Utils.merge, propStyle, Utils.defaultTo({}))
+  const [style, setStyle] = React.useReducer<React.Reducer<React.CSSProperties, React.CSSProperties>>(
+    (s, p) => Object.assign({}, s, p),
+    propStyle,
+  )
 
   const hideMenu = React.useCallback(() => setShowMenu(false), [])
 
@@ -62,10 +61,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
   if (!showMenu) return null
   else
     return (
-      <div ref={ref} className={Utils.joinClassNames(['_rtcm', className])} style={style} onClick={onClick} {...rest}>
+      <div ref={ref} className={`_rtcm ${className}`} style={style} onClick={onClick} {...rest}>
         {children ||
           items!.map(({ className, ...rest }, index) => (
-            <span key={index} className={Utils.joinClassNames(['_rtcm-item', itemClassName, className])} {...rest} />
+            <span key={index} className={['_rtcm-item', itemClassName, className].join(' ')} {...rest} />
           ))}
       </div>
     )
