@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint": "eslint src/* test/ --ext ts --ext tsx",
     "prepublishOnly": "yarn test && yarn build"
   },
   "peerDependencies": {
