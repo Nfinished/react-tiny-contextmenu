@@ -64,7 +64,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
       <div ref={ref} className={`_rtcm ${className}`} style={style} onClick={onClick} {...rest}>
         {children ||
           items!.map(({ className, ...rest }, index) => (
-            <span key={index} className={['_rtcm-item', itemClassName, className].join(' ')} {...rest} />
+            <span key={index} className={`_rtcm-item ${itemClassName} ${className}`} {...rest} />
           ))}
       </div>
     )
