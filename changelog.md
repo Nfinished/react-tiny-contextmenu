@@ -7,6 +7,10 @@ This project follows semver!
 
 ### v1.0.3
 
+- Refactored away internal utils library, saved a few bytes.
+
+### v1.0.3
+
 - Namespace CSS classes so they won't accidentally override anything.
 - Get even tinierer in the process!
 
