@@ -11,9 +11,11 @@ const App = () => {
   const items = [
     {
       children: 'Click me!',
+      className: 'bar',
     },
     {
       children: 'No, click me!',
+      onClick: () => console.log('you clicked me!'),
     },
   ]
 
@@ -22,7 +24,7 @@ const App = () => {
       <button className="button is-primary" ref={containerRef}>
         Right click me!
       </button>
-      <ContextMenu target={containerRef} items={items} />
+      <ContextMenu target={containerRef} items={items} itemClassName="foo" />
     </div>
   )
 }

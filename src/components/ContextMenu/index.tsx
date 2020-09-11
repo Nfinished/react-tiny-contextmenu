@@ -2,6 +2,7 @@ import React from 'react'
 import { useOnClickOutside } from '../../hooks'
 
 import { ContextMenuProps } from '../../types'
+import { combineClassNames } from '../../utils'
 
 import './styles.css'
 
@@ -61,10 +62,10 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
   if (!showMenu) return null
   else
     return (
-      <div ref={ref} className={`_rtcm ${className}`} style={style} onClick={onClick} {...rest}>
+      <div ref={ref} className={combineClassNames('_rtcm', className)} style={style} onClick={onClick} {...rest}>
         {children ||
           items!.map(({ className, ...rest }, index) => (
-            <span key={index} className={`_rtcm-item ${itemClassName} ${className}`} {...rest} />
+            <span key={index} className={combineClassNames('_rtcm-item', itemClassName, className)} {...rest} />
           ))}
       </div>
     )

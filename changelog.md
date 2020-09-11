@@ -5,8 +5,11 @@ This project follows semver!
 * make styles shakeable
 -->
 
-### v1.0.3
+### v1.0.5
 
+- Filter out undefined classNames
+
+### v1.0.4
 - Refactored away internal utils library, saved a few bytes.
 
 ### v1.0.3
