@@ -14,10 +14,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "eslint src/* test/ --ext ts --ext tsx",
+    "prepublishOnly": "yarn test && yarn build"
   },
   "peerDependencies": {
     "react": ">=16.8"
@@ -56,6 +54,7 @@
     "cssnano": "^4.1.10",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^10.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup-plugin-filesize": "^9.0.2",
@@ -65,7 +64,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint --fix"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix --max-warnings=0"
+    ]
   }
 }

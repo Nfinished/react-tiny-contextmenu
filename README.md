@@ -5,7 +5,7 @@ A super tiny, fully typed, zero dependency context menu.
 [![npm version](https://img.shields.io/npm/v/react-tiny-contextmenu?style=flat-square)](https://www.npmjs.com/package/react-tiny-contextmenu)
 [![npm license](https://img.shields.io/npm/l/react-tiny-contextmenu?style=flat-square)](https://github.com/Nfinished/react-tiny-contextmenu/blob/master/LICENSE)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/react-tiny-contextmenu?style=flat-square)](https://bundlephobia.com/result?p=react-tiny-contextmenu)
-![requires react <16.8](https://img.shields.io/npm/dependency-version/react-tiny-contextmenu/peer/react?style=flat-square)
+![requires react >=16.8](https://img.shields.io/npm/dependency-version/react-tiny-contextmenu/peer/react?style=flat-square)
 [![dependencies](https://img.shields.io/david/nfinished/react-tiny-contextmenu?style=flat-square)](https://david-dm.org/nfinished/react-tiny-contextmenu)
 
 [![maintainability](https://img.shields.io/codeclimate/maintainability/Nfinished/react-tiny-contextmenu?style=flat-square)](https://codeclimate.com/github/Nfinished/react-tiny-contextmenu)
@@ -26,7 +26,7 @@ A super tiny, fully typed, zero dependency context menu.
 ---
 
 **children** : `React.ReactNode`
-<br/>Instead of passing in a list of items, roll your own content.
+<br/>Instead of passing in a list of items, roll your own content. Takes priority over items.
 
 ---
 

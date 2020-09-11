@@ -2,7 +2,7 @@ This project follows semver!
 
 <!-- [planned]
 * extra config, ex don't close on click?
-* better test coverage
+* make styles shakeable
 -->
 
 ### v1.0.3

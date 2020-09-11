@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * @caveat Handler should always be wrapped in useCallback.
+ * @gotcha Handler should always be wrapped in useCallback.
  */
 export const useOnClickOutside = (ref: React.RefObject<HTMLElement>, handler: Function) => {
   React.useEffect(() => {
