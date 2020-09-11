@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-
 import { ContextMenu } from '../'
 
 import 'bulma/css/bulma.css'
@@ -20,7 +19,9 @@ const App = () => {
 
   return (
     <div className="container">
-      <button className="button is-primary" ref={containerRef}>Right click me!</button>
+      <button className="button is-primary" ref={containerRef}>
+        Right click me!
+      </button>
       <ContextMenu target={containerRef} items={items} />
     </div>
   )
