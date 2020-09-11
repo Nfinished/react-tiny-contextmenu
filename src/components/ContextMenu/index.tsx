@@ -8,7 +8,7 @@ import './styles.css'
 export const ContextMenu: React.FC<ContextMenuProps> = ({
   target,
   items,
-  style: propStyle = {},
+  style: propStyle,
   onClick: propOnClick,
   children,
   className,
@@ -21,7 +21,7 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
 
   const [style, setStyle] = React.useReducer<React.Reducer<React.CSSProperties, React.CSSProperties>>(
     (s, p) => Object.assign({}, s, p),
-    propStyle,
+    propStyle || {},
   )
 
   const hideMenu = React.useCallback(() => setShowMenu(false), [])
